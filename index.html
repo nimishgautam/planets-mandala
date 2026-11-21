@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planet Mandalas</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%23b8c4ff' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%23ffd27a'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="/src/ui/styles.css" />
+  </head>
+  <body data-view="picker">
+    <div id="stage"></div>
+    <div id="fade"></div>
+
+    <aside id="panel" class="panel">
+      <h1>Planet Mandalas</h1>
+
+      <div class="pair">
+        <label class="field">
+          <span><i class="dot dot-a"></i>Observer <em>stays still</em></span>
+          <select id="sel-a"></select>
+        </label>
+        <button id="swap" class="icon-btn" title="Swap observer and target" aria-label="Swap">⇅</button>
+        <label class="field">
+          <span><i class="dot dot-b"></i>Target <em>traces the pattern</em></span>
+          <select id="sel-b"></select>
+        </label>
+      </div>
+
+      <p id="hint" class="hint picker-only"></p>
+
+      <div class="pattern-only options">
+        <div class="seg" data-key="type">
+          <span>Pattern</span>
+          <button data-value="path" title="Target's path in a frame centred on the observer">Path</button>
+          <button data-value="tether" title="Lines drawn between the two bodies as both orbit">Tether</button>
+        </div>
+        <div class="seg" data-key="draw">
+          <span>Draw</span>
+          <button data-value="full">Full</button>
+          <button data-value="trace">Trace</button>
+          <button data-value="fleeting">Fleeting</button>
+        </div>
+        <div class="seg" data-key="frame">
+          <span>Frame</span>
+          <button data-value="inertial" title="Axes fixed against the stars">Inertial</button>
+          <button data-value="corotating" title="Rotates so the observer's parent stays in one direction">Co-rotating</button>
+        </div>
+        <div class="seg" data-key="model">
+          <span>Orbits</span>
+          <button data-value="keplerian" title="Real eccentricity and inclination">Real</button>
+          <button data-value="idealized" title="Circular, coplanar orbits">Ideal</button>
+        </div>
+        <div class="seg" data-key="color">
+          <span>Colour</span>
+          <button data-value="solid">Solid</button>
+          <button data-value="time">Time</button>
+          <button data-value="speed">Speed</button>
+        </div>
+      </div>
+
+      <button id="go" class="primary picker-only">Draw the mandala →</button>
+      <button id="back" class="ghost pattern-only">← Solar system</button>
+    </aside>
+
+    <div id="caption" class="pattern-only">
+      <div id="caption-title"></div>
+      <div id="caption-sub"></div>
+      <div id="caption-sound"></div>
+    </div>
+
+    <footer id="transport" class="pattern-only">
+      <button id="play" class="icon-btn" aria-label="Play/pause">❚❚</button>
+      <input id="scrub" type="range" min="0" max="1000" value="0" aria-label="Time" />
+      <span id="clock"></span>
+      <button id="audio" class="icon-btn" title="Ambient sound" aria-label="Toggle sound">♪</button>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
