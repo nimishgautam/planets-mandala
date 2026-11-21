@@ -3,6 +3,13 @@
 Pick any two bodies in the solar system and watch the pattern one traces relative to the
 other. The classic example is the five-petalled rose Venus draws around Earth over 8 years.
 
+**Try it live: <https://nimishgautam.github.io/planets-mandala/>.** It runs entirely in the
+browser, so there's nothing to install. The URL keeps your current settings, so you can copy it
+to share a particular mandala. The site redeploys automatically from `main` through GitHub
+Actions (`.github/workflows/deploy.yml`).
+
+To run it locally:
+
 ```bash
 npm install
 npm run dev      # http://localhost:5173
